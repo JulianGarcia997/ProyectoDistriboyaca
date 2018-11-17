@@ -72,7 +72,9 @@
                     <div id="Producto1" runat="server" class="center-align"><asp:LinkButton ID="registrarProduLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="registrarProduLB_Click">Registrar Producto</asp:LinkButton></div>
                     <div id="Producto2" runat="server" class="center-align"><asp:LinkButton ID="modificarProduLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="modificarProduLB_Click">Modificar Producto</asp:LinkButton></div>
                     <div id="Producto3" runat="server" class="center-align"><asp:LinkButton ID="visualizarProduLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="visualizarProduLB_Click">Visualizar Producto</asp:LinkButton></div>
+                    <div id="Producto6" runat="server" class="center-align"><asp:LinkButton ID="eliminarProductoLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="eliminarProductoLB_Click">Eliminar Producto</asp:LinkButton></div>
                     <div id="Producto4" runat="server" class="center-align"><asp:LinkButton ID="actualizarInventarioLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="actualizarInventarioLB_Click">Actualizar Inventario</asp:LinkButton></div>
+                    <div id="Producto5" runat="server" class="center-align"><asp:LinkButton ID="reporteProductosLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="reporteProductosLB_Click">Reporte inventario</asp:LinkButton></div>
                   </div>
                 </li>
                 <li id="opcCliente" runat="server">
@@ -87,6 +89,7 @@
                     <div id="Pedido1" runat="server" class="center-align"><asp:LinkButton ID="visualizarPediLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="visualizarPediLB_Click">Visualizar Pedidos</asp:LinkButton></div>
                     <div id="Pedido2" runat="server" class="center-align"><asp:LinkButton ID="actualizarPediLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="actualizarPediLB_Click">Actualizar Pedidos</asp:LinkButton></div>
                     <div id="Pedido3" runat="server" class="center-align"><asp:LinkButton ID="historialPediLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="historialPediLB_Click">Historial de Pedidos</asp:LinkButton></div>
+                    <div id="Pedido4" runat="server" class="center-align"><asp:LinkButton ID="historialComprasLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="historialComprasLB_Click">Historial de Compras</asp:LinkButton></div>
                   </div>
                 </li>
               </ul>

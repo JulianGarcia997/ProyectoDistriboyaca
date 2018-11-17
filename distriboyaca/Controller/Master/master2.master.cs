@@ -30,6 +30,8 @@ public partial class View_Master_master2 : System.Web.UI.MasterPage
                 case 2:
                     tituloRolL.Text = "Admin";
                     opcAdmin.Visible = false;
+                    Emple6.Visible = false;
+                    opcCliente.Visible = false;
                     Producto4.Visible = false;
                     opcCliente.Visible = false;
                     break;
@@ -169,5 +171,20 @@ public partial class View_Master_master2 : System.Web.UI.MasterPage
     {
         Session["usuario"] = null;
         Response.Redirect("index.aspx");
+    }
+
+    protected void reporteProductosLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("reporte_productos.aspx");
+    }
+
+    protected void eliminarProductoLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("eliminarProducto.aspx");
+    }
+
+    protected void historialComprasLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("historialCompras.aspx");
     }
 }

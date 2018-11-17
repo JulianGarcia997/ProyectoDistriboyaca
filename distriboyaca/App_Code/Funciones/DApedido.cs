@@ -102,4 +102,30 @@ public class DApedido
         }
         return usuarios;
     }
+
+    public DataTable historialCompras(Epedido pedido)
+    {
+        DataTable usuarios = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("pedidos.f_historial_compras", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_cedula_usuario", NpgsqlDbType.Varchar).Value = pedido.CedulaUsuario;
+            conection.Open();
+            dataAdapter.Fill(usuarios);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuarios;
+    }
 }
