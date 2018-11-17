@@ -12,8 +12,8 @@
         <AlternatingRowStyle BackColor="#CCCCCC"/>
         <Columns>
           <asp:ImageField DataImageUrlField="foto_producto" HeaderText="Foto">
-            <ControlStyle Width="250px"/>
-            <ItemStyle Width="280px"/>
+            <ControlStyle Height="200px"/>
+            <ItemStyle Width="200px"/>
           </asp:ImageField>
           <asp:BoundField DataField="id_producto" Visible="false" HeaderText="ID">
             <ItemStyle Font-Size="X-Large"/>
@@ -76,7 +76,7 @@
       <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cerrar</a>
         <asp:LinkButton ID="cancelarLB" CssClass="modal-action waves-effect waves-green btn-flat" runat="server" OnClick="cancelarLB_Click">Cancelar todo</asp:LinkButton>
-        <asp:LinkButton ID="comprarLB" CssClass="modal-action waves-effect waves-green btn-flat" runat="server">Comprar</asp:LinkButton>
+        <asp:LinkButton ID="comprarLB" CssClass="modal-action waves-effect waves-green btn-flat" runat="server" OnClick="comprarLB_Click1">Comprar</asp:LinkButton>
     </div>
     </div>
   </div>

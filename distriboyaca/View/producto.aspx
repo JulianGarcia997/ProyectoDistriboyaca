@@ -14,7 +14,7 @@
       <div class="col l6">
         <asp:Image ID="fotoProductoI" CssClass="responsive-img" runat="server"/>
       </div>
-      <div class="col l6">
+      <div class="col l6" style=" padding-top:200px">
         <asp:Label ID="nombreL" Font-Size="Medium" runat="server"></asp:Label><br/> 
         <asp:Label ID="colorL" Font-Size="Medium" runat="server"></asp:Label><br/>
         <asp:Label ID="referenciaL" Font-Size="Medium" runat="server"></asp:Label><br/>

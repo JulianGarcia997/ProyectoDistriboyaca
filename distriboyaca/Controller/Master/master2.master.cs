@@ -85,4 +85,44 @@ public partial class View_Master_master2 : System.Web.UI.MasterPage
     {
         Response.Redirect("visualizarProducto.aspx");
     }
+
+    protected void visualizarClienLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("visualizarCliente.aspx");
+    }
+
+    protected void visualizarPediLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("visualizarPedido.aspx");
+    }
+
+    protected void actualizarPediLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("actualizarPedido.aspx");
+    }
+
+    protected void historialPediLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("historialPedido.aspx");
+    }
+
+    protected void reporteEmpleLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("reporte_empleados.aspx");
+    }
+
+    protected void certificadoLaboralLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("reporte_certificado.aspx");
+    }
+
+    protected void bloquearUsuLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("BloquearUsuario.aspx");
+    }
+
+    protected void actualizarInventarioLB_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("actualizarInventario.aspx");
+    }
 }

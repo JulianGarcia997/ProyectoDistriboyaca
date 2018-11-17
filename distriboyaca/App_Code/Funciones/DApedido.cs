@@ -50,4 +50,56 @@ public class DApedido
             }
         }
     }
+
+    public DataTable modificarEstadoPedidos(int id)
+    {
+        DataTable usuarios = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("pedidos.f_modificar_estado_pedido", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id_pedido", NpgsqlDbType.Integer).Value = id;
+            conection.Open();
+            dataAdapter.Fill(usuarios);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuarios;
+    }
+
+    public DataTable listarpedidos(int opcion)
+    {
+        DataTable usuarios = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("pedidos.f_listar_pedidos", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("opcion", NpgsqlDbType.Integer).Value = opcion;
+            conection.Open();
+            dataAdapter.Fill(usuarios);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return usuarios;
+    }
 }

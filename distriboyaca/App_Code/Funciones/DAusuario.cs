@@ -230,6 +230,32 @@ public class DAusuario
         return usuarioValido;
     }
 
+    public void cambiarEstado(string cedula, string estado)
+    {
+        DataTable usuarioValido = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("usuarios.f_cambiar_estado", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_cedula_usuario", NpgsqlDbType.Varchar).Value = cedula;
+            dataAdapter.SelectCommand.Parameters.Add("cambio", NpgsqlDbType.Varchar).Value = estado;
+            conection.Open();
+            dataAdapter.Fill(usuarioValido);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+    }
+
     public DataTable login(Eusuario usuario)
     {
         DataTable usuarioValido = new DataTable();
@@ -256,5 +282,4 @@ public class DAusuario
         }
         return usuarioValido;
     }
-
 }

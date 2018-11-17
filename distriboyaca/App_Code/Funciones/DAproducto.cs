@@ -92,6 +92,7 @@ public class DAproducto
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             dataAdapter.SelectCommand.Parameters.Add("_nombre_producto", NpgsqlDbType.Varchar).Value = produco.NombreProducto;
             dataAdapter.SelectCommand.Parameters.Add("_codigo_producto", NpgsqlDbType.Varchar).Value = produco.CodigoProducto;
+            dataAdapter.SelectCommand.Parameters.Add("_color_producto", NpgsqlDbType.Varchar).Value = produco.ColorProducto;
             conection.Open();
             dataAdapter.Fill(productoValido);
         }
@@ -158,5 +159,82 @@ public class DAproducto
             }
         }
         return productos;
+    }
+
+    public DataTable listartProductos()
+    {
+        DataTable productos = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("productos.f_listar_tproductos", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            conection.Open();
+            dataAdapter.Fill(productos);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return productos;
+    }
+
+    public void descontarInventario(string codigo, int descontar)
+    {
+        DataTable modificarProducto = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("productos.f_descontar_producto", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_codigo_producto", NpgsqlDbType.Varchar).Value = codigo;
+            dataAdapter.SelectCommand.Parameters.Add("descontar", NpgsqlDbType.Integer).Value = descontar;
+            conection.Open();
+            dataAdapter.Fill(modificarProducto);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+    }
+
+    public void actualizarInventario(string codigo, int cantidad)
+    {
+        DataTable modificarProducto = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("productos.f_actualizar_inventario", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_codigo_producto", NpgsqlDbType.Varchar).Value = codigo;
+            dataAdapter.SelectCommand.Parameters.Add("cantidad", NpgsqlDbType.Integer).Value = cantidad;
+            conection.Open();
+            dataAdapter.Fill(modificarProducto);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
     }
 }

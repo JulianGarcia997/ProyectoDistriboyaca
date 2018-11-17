@@ -43,7 +43,7 @@
         <SortedDescendingCellStyle BackColor="#E1DB9C"/>
         <SortedDescendingHeaderStyle BackColor="#C2A47B"/>
       </asp:GridView>
-      <asp:ObjectDataSource ID="productosODS" runat="server" SelectMethod="listarProductos" TypeName="DAproducto"></asp:ObjectDataSource>
+      <asp:ObjectDataSource ID="productosODS" runat="server" SelectMethod="listartProductos" TypeName="DAproducto"></asp:ObjectDataSource>
     </div>
   </div>
 </asp:Content>

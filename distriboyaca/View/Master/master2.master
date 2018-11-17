@@ -51,7 +51,15 @@
                     <div class="center-align"><asp:LinkButton ID="registrarEmpleLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="registrarEmpleLB_Click">Registrar Empleado</asp:LinkButton></div>
                     <div class="center-align"><asp:LinkButton ID="modificarEmpleLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="modificarEmpleLB_Click">Modificar Empleado</asp:LinkButton></div>
                     <div class="center-align"><asp:LinkButton ID="visualizarEmpleLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="visualizarEmpleLB_Click">Visualizar Empleado</asp:LinkButton></div>
+                    <div class="center-align"><asp:LinkButton ID="actualizarInventarioLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="actualizarInventarioLB_Click">Actualizar Inventario</asp:LinkButton></div>
+                    <div class="center-align"><asp:LinkButton ID="reporteEmpleLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="reporteEmpleLB_Click">Generar Reporte</asp:LinkButton></div>
+                    <div class="center-align"><asp:LinkButton ID="certificadoLaboralLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="certificadoLaboralLB_Click">Certificado Laboral</asp:LinkButton></div>
                   </div>
+                </li>
+                <li>
+                  <div class="collapsible-header black-text"><i class="material-icons left">person_add</i>Bloqueos</div>
+                  <div class="collapsible-body">
+                    <div class="center-align"><asp:LinkButton ID="bloquearUsuLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="bloquearUsuLB_Click">Bloquear Usuario</asp:LinkButton></div>
                 </li>
                 <li>
                   <div class="collapsible-header black-text"><i class="material-icons left">business_center</i>Proveedor</div>
@@ -75,6 +83,20 @@
                     <div class="center-align"><asp:LinkButton ID="registrarProduLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="registrarProduLB_Click">Registrar Producto</asp:LinkButton></div>
                     <div class="center-align"><asp:LinkButton ID="modificarProduLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="modificarProduLB_Click">Modificar Producto</asp:LinkButton></div>
                     <div class="center-align"><asp:LinkButton ID="visualizarProduLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="visualizarProduLB_Click">Visualizar Producto</asp:LinkButton></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header black-text"><i class="material-icons left">visibility</i>Clientes</div>
+                  <div class="collapsible-body">
+                    <div class="center-align"><asp:LinkButton ID="visualizarClienLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="visualizarClienLB_Click">Visualizar Clientes</asp:LinkButton></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header black-text"><i class="material-icons left">local_shipping</i>Pedidos</div>
+                  <div class="collapsible-body">
+                    <div class="center-align"><asp:LinkButton ID="visualizarPediLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="visualizarPediLB_Click">Visualizar Pedidos</asp:LinkButton></div>
+                    <div class="center-align"><asp:LinkButton ID="actualizarPediLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="actualizarPediLB_Click">Actualizar Pedidos</asp:LinkButton></div>
+                    <div class="center-align"><asp:LinkButton ID="historialPediLB" CssClass="indigo-text text-darken-4" runat="server" OnClick="historialPediLB_Click">Historial de Pedidos</asp:LinkButton></div>
                   </div>
                 </li>
               </ul>
