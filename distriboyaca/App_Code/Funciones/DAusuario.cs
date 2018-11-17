@@ -256,6 +256,31 @@ public class DAusuario
         }
     }
 
+    public void eliminarUsuario(int id)
+    {
+        DataTable usuarioValido = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString);
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("usuarios.f_eliminar_empleado", conection);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id_empleado", NpgsqlDbType.Integer).Value = id;
+            conection.Open();
+            dataAdapter.Fill(usuarioValido);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+    }
+
     public DataTable login(Eusuario usuario)
     {
         DataTable usuarioValido = new DataTable();

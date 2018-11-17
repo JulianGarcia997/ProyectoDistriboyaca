@@ -8,6 +8,9 @@ using System.Web.UI.WebControls;
 
 public partial class View_actualizarInventario : System.Web.UI.Page
 {
+
+    static DataTable productoValido = new DataTable();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         formularioOculto.Visible = false;
@@ -21,7 +24,6 @@ public partial class View_actualizarInventario : System.Web.UI.Page
         {
             Eproducto encapsular = new Eproducto();
             DAproducto funcion = new DAproducto();
-            DataTable productoValido = new DataTable();
             encapsular.CodigoProducto = buscarTB.Text;
             productoValido = funcion.buscarUsuario(encapsular);
             if (productoValido.Rows.Count>0)
@@ -60,7 +62,8 @@ public partial class View_actualizarInventario : System.Web.UI.Page
             else
             {
                 DAproducto funcion = new DAproducto();
-                funcion.actualizarInventario(codigoL.Text, int.Parse(cantidadTB.Text));
+                string codigo = codigoL.Text;
+                funcion.actualizarInventario(productoValido.Rows[0]["codigo_producto"].ToString(), int.Parse(cantidadTB.Text));
                 validoL.Text = "¡Actualizacion exitosa!";
                 validoL.Visible = true;
             }
